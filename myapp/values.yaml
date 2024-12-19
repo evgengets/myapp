@@ -1,0 +1,36 @@
+# values.yaml
+
+replicaCount: 1
+
+image:
+  repository: "evgengets/neoflex"
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+serviceAccount:
+  create: true
+  name: ""
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 80
+
+    
+service:
+  type: NodePort
+  port: 8098
+  targetPort: 8098
+
+ingress:
+  enabled: false
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
